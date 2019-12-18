@@ -1,0 +1,10 @@
+<%= link_to 'Add Drink', new_drink_path %>
+
+
+<% @drinks.each do |drink| %>
+  <p>
+    Name: <%= link_to drink.name, drink_path(drink) %> <br/>
+    Size: <%= drink.size %> | <%= link_to 'Edit', 
+      edit_drink_path(drink)%> | <%= link_to 'Delete', drink, method: :delete %>
+  </p>
+<% end %>
